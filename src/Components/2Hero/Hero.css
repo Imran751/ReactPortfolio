@@ -1,0 +1,95 @@
+/* Hero.css */
+.hero-container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 0 50px;
+}
+
+.hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-circle {
+  width: 500px;
+  height: 500px;
+  background-color: #ff6347; /* Tomato color */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: -50px; */
+}
+
+.hero-image {
+  width: 300px; /* Adjust size of the image */
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+  color: #333;
+  margin: 0 50px;
+}
+
+.hero-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+.hero-cta-button {
+  padding: 10px 30px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #ff6347; /* Tomato color */
+  border: 2px solid transparent; /* Default border for button */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+  font-family: "Arial", sans-serif; /* Add a specific font for better appearance */
+  text-transform: uppercase; /* Uppercase text for emphasis */
+}
+
+.hero-cta-button:hover {
+  background-color: #fff; /* Change background color on hover */
+  color: #ff6347; /* Change text color on hover */
+  border-color: #ff6347; /* Tomato color border on hover */
+  transform: scale(
+    1.05
+  ); /* Slightly scale the button on hover for a 3D effect */
+}
+
+.hero-social-icons {
+  display: flex;
+  gap: 100px;
+  margin-top: 20px;
+}
+
+.hero-icon {
+  color: #333;
+  font-size: 48px;
+  transition: color 0.3s;
+}
+
+.hero-icon:hover {
+  color: #ff6347; /* Tomato color */
+}

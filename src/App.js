@@ -1,21 +1,26 @@
 import React from "react";
+import TopBar from "./Components/1TopBar/TopBar";
+import Hero from "./Components/2Hero/Hero";
+import Profile from "./Components/3Profile/Profile";
+import Works from "./Components/4Works/Works";
+import Testimonials from "./Components/5Testimonials/Testimonials";
+import Contact from "./Components/6Contact/Contact";
+import Footer from "./Components/7Footer/Footer";
 
 const App = () => {
   return (
-    <div style={styles.container}>
-      <h1>App</h1>
+    <div className="app">
+      <TopBar />
+      <div className="sections">
+        <Hero />
+        <Profile />
+        <Works />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: "flex",
-    // justifyContent: "center",
-    // alignItems: "center",
-    height: "100vh",
-    backgroundColor: "#f5f5f5",
-  },
 };
 
 export default App;
