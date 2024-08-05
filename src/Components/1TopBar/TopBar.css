@@ -28,12 +28,19 @@
 .center {
   display: flex;
   align-items: center;
+  padding-right: 100px;
 }
 
-.contact {
+.phone {
   display: flex;
   align-items: center;
-  margin-right: 50px;
+  margin-right: 25px;
+  color: #333;
+}
+.email {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
   color: #333;
 }
 
@@ -74,22 +81,36 @@
     padding-right: 50px;
   }
 
-  .contact {
+  .phone {
+    margin-right: 20px;
+  }
+
+  .email {
     margin-right: 10px;
   }
 
   .promo {
     display: none;
   }
-
-  .hamburger {
-    margin-right: 20px;
-  }
 }
 
 /* Media Query to hide center on small screens */
 @media (max-width: 768px) {
   .center {
+    flex: 1;
+    justify-content: center;
+    padding-right: 50px;
+  }
+
+  .phone {
+    margin-right: 10px;
+  }
+
+  .email {
+    display: none;
+  }
+
+  .promo {
     display: none;
   }
 }

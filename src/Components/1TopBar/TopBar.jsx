@@ -9,10 +9,10 @@ const TopBar = () => {
         <span className="logo">.imran</span>
       </div>
       <div className="center">
-        <div className="contact">
+        <div className="phone">
           <FaPhone className="icon" /> <span>+92 300 6509123</span>
         </div>
-        <div className="contact">
+        <div className="email">
           <FaEnvelope className="icon" />{" "}
           <span>muhammadimranjhang@gmail.com</span>
         </div>
