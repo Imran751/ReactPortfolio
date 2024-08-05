@@ -1,26 +1,9 @@
-import React from "react";
+import "./Testimonials.css";
 
-const Testimonials = () => {
+export default function Testimonials() {
   return (
-    <div style={styles.container}>
-      <main style={styles.main}>
-        <p>Testimonials</p>
-      </main>
+    <div className="Testimonials">
+      <p>Testimonials</p>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    height: "100vh",
-    backgroundColor: "#f4f4f4",
-  },
-  main: {
-    flex: 1,
-    padding: "20px",
-  },
-};
-
-export default Testimonials;
+}

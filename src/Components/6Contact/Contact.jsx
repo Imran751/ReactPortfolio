@@ -1,26 +1,9 @@
-import React from "react";
+import "./Contact.css";
 
-const Contact = () => {
+export default function Contact() {
   return (
-    <div style={styles.container}>
-      <main style={styles.main}>
-        <p>Contact</p>
-      </main>
+    <div className="contactUs">
+      <p>Contact</p>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    height: "100vh",
-    backgroundColor: "#f4f4f4",
-  },
-  main: {
-    flex: 1,
-    padding: "20px",
-  },
-};
-
-export default Contact;
+}

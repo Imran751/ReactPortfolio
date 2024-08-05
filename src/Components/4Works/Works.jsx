@@ -1,26 +1,9 @@
-import React from "react";
+import "./Works.css";
 
-const Works = () => {
+export default function Works() {
   return (
-    <div style={styles.container}>
-      <main style={styles.main}>
-        <p>Works</p>
-      </main>
+    <div className="Works">
+      <p>Works</p>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    height: "100vh",
-    backgroundColor: "#f4f4f4",
-  },
-  main: {
-    flex: 1,
-    padding: "20px",
-  },
-};
-
-export default Works;
+}

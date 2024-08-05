@@ -1,8 +1,8 @@
 /* TopBar.css */
 .container {
   width: 100%;
-  height: 70px;
-  background-color: #333;
+  height: 50px;
+  background-color: #fff;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -23,21 +23,25 @@
 .logo {
   font-size: 24px;
   font-weight: bold;
+  color: #333;
 }
 
 .center {
   display: flex;
   align-items: center;
+  padding-right: 500px;
 }
 
 .contact {
   display: flex;
   align-items: center;
   margin-right: 50px;
+  color: #333;
 }
 
 .icon {
   margin-right: 5px;
+  color: #333;
 }
 
 .promo {
@@ -61,6 +65,7 @@
   font-size: 24px;
   cursor: pointer;
   margin-right: 50px;
+  color: #333;
 }
 
 /* Media Query to hide center on small screens */
