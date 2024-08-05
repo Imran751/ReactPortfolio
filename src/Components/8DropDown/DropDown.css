@@ -1,0 +1,25 @@
+/* Dropdown menu container */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px; /* Adjust to position below the TopBar */
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 10000;
+}
+
+/* Dropdown items */
+.dropdown span {
+  padding: 10px 20px;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Hover effect for dropdown items */
+.dropdown span:hover {
+  background-color: #f0f0f0;
+}

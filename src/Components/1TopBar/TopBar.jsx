@@ -6,7 +6,9 @@ const TopBar = () => {
   return (
     <div className="container">
       <div className="left">
-        <span className="logo">.imran</span>
+        <a className="logo" href="#Hero">
+          .imran
+        </a>
       </div>
       <div className="center">
         <div className="phone">
@@ -24,6 +26,8 @@ const TopBar = () => {
           alt="User"
           className="userImage"
         />
+      </div>
+      <div className="hamburger-container">
         <FaBars className="hamburger" />
       </div>
     </div>
