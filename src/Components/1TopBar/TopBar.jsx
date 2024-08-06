@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaPhone, FaEnvelope, FaUser, FaCog } from "react-icons/fa";
-import "./TopBar.css"; // Import the CSS file
+import "./TopBar.css";
 
 const TopBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,7 +33,7 @@ const TopBar = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className={`container ${isModalOpen ? "modal-open" : ""}`}>
       <div className="left">
         <a className="logo" href="#Hero">
           .imran
@@ -51,7 +51,7 @@ const TopBar = () => {
       </div>
       <div className="right">
         <img
-          src={require("../../Assets/pf1.jpg")} // Update with the correct path to your image in the assets folder
+          src={require("../../Assets/pf1.jpg")}
           alt="User"
           className="myImage"
         />

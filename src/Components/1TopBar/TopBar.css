@@ -12,7 +12,26 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.container.modal-open {
+  background-color: gray; /* Set background to gray when modal is open */
+}
+.container.modal-open .logo {
+  color: #fff;
+}
+.container.modal-open .phone {
+  color: #fff;
+}
+.container.modal-open .email {
+  color: #fff;
+}
+.container.modal-open .icon {
+  color: #fff;
+}
+.container.modal-open .bar {
+  background-color: #fff;
 }
 
 /* Left Section */
@@ -87,7 +106,6 @@
   height: 40px;
   border-radius: 50%;
   margin-right: 50px;
-  cursor: pointer;
   object-fit: cover;
 }
 
@@ -142,7 +160,7 @@
   background-color: gray;
   z-index: 1100;
   padding: 20px;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  /* box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3); */
   animation: slide-in 0.3s forwards;
   display: flex;
   flex-direction: column;
@@ -204,7 +222,7 @@
 }
 
 @media (max-width: 768px) {
-  .userImage {
+  .myImage {
     width: 35px; /* Smaller size for smaller screens */
     height: 35px; /* Match height to width */
     margin-right: 20px;
