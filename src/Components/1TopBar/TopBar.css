@@ -62,6 +62,7 @@
   display: flex;
   align-items: center;
   color: #333;
+  font-size: 12px;
 }
 
 .phone {
@@ -75,8 +76,9 @@
 }
 
 .promo {
-  font-weight: bold;
-  color: #ff6347;
+  font-weight: normal;
+  font-size: 12;
+  color: crimson;
   margin-left: auto; /* Pushes promo to the far right */
   animation: slide-continuous 3s ease-in-out infinite; /* Continuous animation */
 }
@@ -107,6 +109,7 @@
   border-radius: 50%;
   margin-right: 50px;
   object-fit: cover;
+  background-color: crimson;
 }
 
 /* Hamburger Menu Styles */
@@ -124,7 +127,7 @@
   width: 40px;
   height: 20px;
   overflow: hidden;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.5s ease;
   position: relative; /* Ensure proper positioning */
 }
 
@@ -195,12 +198,12 @@
 }
 
 .about {
-  font-weight: bold; /* Make Profile stand out */
+  font-weight: normal; /* Make Profile stand out */
   color: #ff6347; /* Different color for Profile */
 }
 
 .settings {
-  font-weight: bold; /* Make Settings stand out */
+  font-weight: normal; /* Make Settings stand out */
   color: #4caf50; /* Different color for Settings */
 }
 
@@ -227,6 +230,15 @@
     height: 35px; /* Match height to width */
     margin-right: 20px;
   }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .modal a {
+    font-size: 10px;
+  }
+
   .center {
     flex: 0.5;
     justify-content: center;
