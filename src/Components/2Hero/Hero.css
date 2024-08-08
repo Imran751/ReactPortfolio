@@ -8,10 +8,10 @@
     overflow: hidden;
 
     .imgContainer {
-      margin-top: 120px;
+      margin-top: 130px;
       margin-left: -50px;
-      width: 700px;
-      height: 700px;
+      width: 50vw;
+      height: 50vw;
       background-color: crimson;
       border-radius: 50%;
       display: flex;
@@ -36,17 +36,17 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      text-align: left; /* Align text to the left for larger screens */
+      text-align: left;
 
       h1 {
-        font-size: 70px;
+        font-size: clamp(28px, 10vw, 70px);
         margin: 10px 0;
       }
       h2 {
-        font-size: 35px;
+        font-size: clamp(18px, 5vw, 30px);
       }
       h3 {
-        font-size: 30px;
+        font-size: clamp(16px, 4vw, 25px);
         span {
           font-size: inherit;
           color: crimson;
@@ -59,52 +59,57 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px; /* Space between download button and social icons */
-      margin-top: 30px; /* Space from the top section */
+      gap: 20px;
+      margin-top: 2vh;
+      justify-content: center;
+      align-items: flex-start;
     }
 
     .downloadCvBtn {
       display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .downloadCvBtn button {
-      background-color: #007bff; /* Primary color */
-      color: #fff; /* Text color */
+      background-color: gray;
+      color: #fff;
       border: none;
-      border-radius: 3px; /* Slightly rounded corners */
-      padding: 8px 16px; /* Comfortable padding */
-      font-size: 14px; /* Professional font size */
+      border-radius: 3px;
+      padding: 4px 16px;
+      font-size: 14px;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .downloadCvBtn button:hover {
-      background-color: #0056b3; /* Darker shade on hover */
-      transform: scale(1.02); /* Subtle enlarge effect on hover */
+      background-color: #0056b3;
+      transform: scale(1.02);
     }
 
     .SocialContainer {
+      width: 80vw;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      gap: 12px; /* Space between icons */
+      gap: 3vw;
       overflow: hidden;
     }
 
+    .SocialContainer a {
+      display: inline-block;
+    }
+
     .SocialContainer img {
-      width: 30px; /* Small, professional icon size */
-      height: 30px; /* Maintain aspect ratio */
+      width: 30px;
+      height: 30px;
       transition: opacity 0.3s ease, transform 0.2s ease;
     }
 
     .SocialContainer img:hover {
-      opacity: 0.7; /* Slight opacity change on hover */
-      transform: scale(1.05); /* Slightly enlarge icons on hover */
+      opacity: 0.7;
+      transform: scale(1.05);
     }
 
-    a {
+    .arrowDown {
       position: absolute;
       bottom: 10px;
       padding-right: 50px;
@@ -123,147 +128,42 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media screen and (orientation: portrait) {
   .Hero {
-    flex-direction: row;
+    flex: 1;
+    flex-direction: column;
     align-items: center;
 
     .left {
+      flex: 0.5;
       .imgContainer {
-        margin-top: 60px;
+        margin-top: 5px;
+        width: 45vw;
+        height: 45vw;
         margin-left: 0;
-        width: 500px;
-        height: 500px;
       }
     }
 
     .right {
+      flex: 0.5;
+      padding-left: 0;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+
       .wrapper {
-        padding-left: 20px;
-        h1 {
-          font-size: 50px;
-        }
-        h2 {
-          font-size: 28px;
-        }
-        h3 {
-          font-size: 24px;
-        }
-      }
-      .btnSocail {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        min-width: 140px;
         margin-top: 20px;
-        gap: 15px;
-      }
-      .downloadCvBtn button {
-        font-size: 12px;
-        padding: 6px 14px;
-      }
-      .SocialContainer img {
-        width: 28px;
-        height: 28px;
-      }
-    }
-  }
-}
+        transform: translateX(30vw);
 
-@media (max-width: 768px) {
-  .Hero {
-    flex-direction: column;
-    align-items: center;
-
-    .left {
-      flex: 0.6;
-      .imgContainer {
-        margin-top: 20px;
-        width: 350px;
-        height: 350px;
-      }
-    }
-
-    .right {
-      flex: 0.4;
-      width: 100%;
-      .wrapper {
-        padding-left: 0;
-        text-align: center; /* Center text on medium screens */
-        h1 {
-          font-size: 40px;
-        }
-        h2 {
-          font-size: 24px;
-        }
-        h3 {
-          font-size: 20px;
-        }
-      }
-      .btnSocail {
-        gap: 10px;
-      }
-      .downloadCvBtn button {
-        font-size: 12px;
-        padding: 6px 12px;
-      }
-      .SocialContainer img {
-        width: 25px;
-        height: 25px;
-      }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .Hero {
-    flex-direction: column;
-    align-items: center;
-
-    .left {
-      .imgContainer {
-        margin-top: 15px;
-        width: 250px;
-        height: 250px;
-      }
-    }
-
-    .right {
-      .wrapper {
-        padding-left: 0;
-        text-align: center;
-        h1 {
-          font-size: 32px;
-        }
-        h2 {
-          font-size: 20px;
-        }
-        h3 {
-          font-size: 18px;
-        }
-      }
-      .btnSocail {
-        gap: 8px;
-        margin-top: 15px;
-      }
-      .downloadCvBtn button {
-        font-size: 10px;
-        padding: 5px 10px;
-      }
-      .SocialContainer img {
-        width: 20px;
-        height: 20px;
-      }
-      a {
-        bottom: 30px;
-        img {
-          width: 40px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 320px) {
-  .Hero {
-    .right {
-      .wrapper {
         h1 {
           font-size: 28px;
         }
@@ -274,13 +174,31 @@
           font-size: 16px;
         }
       }
-      .downloadCvBtn button {
-        font-size: 9px;
-        padding: 4px 8px;
+
+      .btnSocail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 2vh;
+        justify-content: center;
+        align-items: flex-start;
       }
+
+      .downloadCvBtn {
+        display: flex;
+      }
+
       .SocialContainer img {
-        width: 18px;
-        height: 18px;
+        width: 22px;
+        height: 22px;
+      }
+
+      .arrowDown {
+        bottom: 20px;
+        img {
+          width: 35px;
+        }
       }
     }
   }

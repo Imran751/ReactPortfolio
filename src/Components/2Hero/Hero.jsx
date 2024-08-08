@@ -1,19 +1,29 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
+import resumePdf from "../../Assets/europassDeveloperImranCV.pdf";
 import "./Hero.css";
 
 export default function Hero() {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = resumePdf;
+    link.download = "resume.pdf"; // Name of the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="Hero" id="Hero">
       <div className="left">
         <div className="imgContainer">
-          <img src={require("../../Assets/imran.png")} alt="" />
+          <img src={require("../../Assets/imran.png")} alt="Imran" />
         </div>
       </div>
       <div className="right">
         <div className="wrapper">
           <h2>Hi There, I'm</h2>
-          <h1>Muhammad Imran</h1>
+          <h1>Imran</h1>
           <h3>
             Freelance{" "}
             <span>
@@ -34,19 +44,52 @@ export default function Hero() {
           </h3>
           <div className="btnSocail">
             <div className="downloadCvBtn">
-              <button>Download Cv</button>
+              <button onClick={handleDownload}>Download Cv</button>
             </div>
             <div className="SocialContainer">
-              <img src={require("../../Assets/git.png")} alt="" />
-              <img src={require("../../Assets/youtube.png")} alt="" />
-              <img src={require("../../Assets/x.png")} alt="" />
-              <img src={require("../../Assets/insta.png")} alt="" />
-              <img src={require("../../Assets/linkedin.png")} alt="" />
+              <a
+                href="https://github.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={require("../../Assets/git.png")} alt="GitHub" />
+              </a>
+              <a
+                href="https://youtube.com/yourchannel"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={require("../../Assets/youtube.png")} alt="YouTube" />
+              </a>
+              <a
+                href="https://twitter.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={require("../../Assets/x.png")} alt="Twitter" />
+              </a>
+              <a
+                href="https://instagram.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={require("../../Assets/insta.png")} alt="Instagram" />
+              </a>
+              <a
+                href="https://linkedin.com/in/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={require("../../Assets/linkedin.png")}
+                  alt="LinkedIn"
+                />
+              </a>
             </div>
           </div>
         </div>
-        <a href="#Profile">
-          <img src={require("../../Assets/down.png")} alt="" />
+        <a href="#Profile" className="arrowDown">
+          <img src={require("../../Assets/down.png")} alt="Down Arrow" />
         </a>
       </div>
     </div>
