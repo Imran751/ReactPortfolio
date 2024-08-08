@@ -7,7 +7,7 @@ export default function Hero() {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = resumePdf;
-    link.download = "resume.pdf"; // Name of the downloaded file
+    link.download = "resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -44,7 +44,7 @@ export default function Hero() {
           </h3>
           <div className="btnSocail">
             <div className="downloadCvBtn">
-              <button onClick={handleDownload}>Download Cv</button>
+              <button onClick={handleDownload}>Download CV</button>
             </div>
             <div className="SocialContainer">
               <a

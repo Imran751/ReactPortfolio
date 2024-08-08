@@ -50,7 +50,7 @@
         span {
           font-size: inherit;
           color: crimson;
-          margin-left: 5px;
+          margin-left: 1px;
         }
       }
     }
@@ -77,12 +77,12 @@
       padding: 4px 16px;
       font-size: 14px;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .downloadCvBtn button:hover {
-      background-color: #0056b3;
-      transform: scale(1.02);
+      background-color: transparent;
+      border: 1px solid gray;
+      color: gray;
     }
 
     .SocialContainer {
@@ -147,6 +147,7 @@
     .right {
       flex: 0.5;
       padding-left: 0;
+      padding-right: 0;
       width: 100vw;
       display: flex;
       flex-direction: column;
@@ -160,9 +161,9 @@
         flex-direction: column;
         justify-content: flex-start;
         text-align: left;
-        min-width: 140px;
+        min-width: 80px;
         margin-top: 20px;
-        transform: translateX(30vw);
+        transform: translateX(20vw);
 
         h1 {
           font-size: 28px;
@@ -187,6 +188,11 @@
 
       .downloadCvBtn {
         display: flex;
+      }
+
+      .SocialContainer {
+        gap: 7vw;
+        overflow: hidden;
       }
 
       .SocialContainer img {
