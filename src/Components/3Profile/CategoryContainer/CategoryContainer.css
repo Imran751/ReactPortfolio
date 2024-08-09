@@ -1,0 +1,99 @@
+/* Wrapper around the category container and scroll buttons */
+.category-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+/* Category Container Styles */
+.category-container {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  /* white-space: nowrap; */
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.category-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+}
+
+/* Category Item Styles */
+.category-item {
+  font-size: 14px;
+  padding: 10px 20px;
+  margin: 0 5px; /* Add spacing between items */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0; /* Prevent shrinking */
+  border-radius: 5px; /* Smoother edges */
+}
+
+.category-item.active {
+  background-color: #555; /* Use a more neutral dark color */
+  color: #fff;
+}
+
+.category-item:hover {
+  background-color: #444; /* Slightly darker for hover effect */
+  color: #fff;
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Scroll Button Styles */
+.scroll-button {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.scroll-button.left {
+  left: 0;
+}
+
+.scroll-button.right {
+  right: 0;
+}
+
+.scroll-button:hover {
+  background-color: #555;
+}
+
+/* Media Query for Portrait Devices */
+@media screen and (orientation: portrait) {
+  .category-item {
+    font-size: 12px; /* Reduced font size for portrait orientation */
+    padding: 8px 10px; /* Adjust padding for smaller screens */
+    margin: 0 3px; /* Adjust spacing between items */
+  }
+}
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .category-item {
+    font-size: 12px; /* Reduce font size */
+    padding: 5px 10px; /* Adjust padding for smaller screens */
+    /* margin: 0 3px; */
+  }
+
+  .category-container {
+    padding: 0 50px;
+    padding-left: 200px;
+  }
+
+  .scroll-button {
+    padding: 8px; /* Reduce button padding */
+  }
+}
