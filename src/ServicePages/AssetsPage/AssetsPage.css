@@ -1,0 +1,12 @@
+/* AssetsPage Component Styles */
+.AssetsPage {
+  background-color: orchid;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.AssetsPageHeading {
+  text-align: center;
+  padding-bottom: 20px;
+}

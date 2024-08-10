@@ -1,0 +1,12 @@
+/* Feature Component Styles */
+.Feature {
+  background-color: orchid;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.FeatureHeading {
+  text-align: center;
+  padding-bottom: 20px;
+}
