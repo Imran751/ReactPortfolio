@@ -1,21 +1,14 @@
 import React, { useState, useRef } from "react";
 import "./CategoryContainer.css";
 
-export default function CategoryContainer() {
-  const categories = [
-    "Feature",
-    "Figma",
-    "Website",
-    "Assets",
-    "Store",
-    "This",
-    "that",
-  ];
+export default function CategoryContainer({ setActiveSection }) {
+  const categories = ["Feature", "Figma", "Website", "Assets", "Store"];
   const [activeCategory, setActiveCategory] = useState("Feature");
   const containerRef = useRef(null);
 
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
+    setActiveSection(category); // Update the active section
   };
 
   const scrollLeft = () => {
