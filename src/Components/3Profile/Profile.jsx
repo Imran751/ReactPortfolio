@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Profile.css";
 import CategoryContainer from "./CategoryContainer/CategoryContainer";
-import Feature from "../../ServicePages/Feature/Feature";
-import AssetsPage from "../../ServicePages/AssetsPage/AssetsPage";
-import Figma from "../../ServicePages/Figma/Figma";
-import Store from "../../ServicePages/Store/Store";
-import Website from "../../ServicePages/Website/Website";
+import Feature from "../../Services/Feature/Feature";
+import AssetsPage from "../../Services/AssetsPage/AssetsPage";
+import Figma from "../../Services/Figma/Figma";
+import Store from "../../Services/Store/Store";
+import Website from "../../Services/Website/Website";
 
 export default function Profile() {
   const [activeSection, setActiveSection] = useState("Feature");
