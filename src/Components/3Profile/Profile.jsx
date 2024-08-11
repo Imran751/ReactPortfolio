@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "./Profile.css";
-import CategoryContainer from "./CategoryContainer/CategoryContainer";
-import Feature from "../../Services/Feature/Feature";
-import AssetsPage from "../../Services/AssetsPage/AssetsPage";
-import Figma from "../../Services/Figma/Figma";
-import Store from "../../Services/Store/Store";
-import Website from "../../Services/Website/Website";
+import CategoryContainer from "../../Services/CategoryContainer/CategoryContainer";
+import FeatureDes from "../../Services/ServicesDes/FeatureDes/FeatureDes";
+import FeatureImage from "../../Services/ServicesImages/FeatureImage/FeatureImage";
+import AssetDes from "../../Services/ServicesDes/AssetDes/FeatureDes";
+import FigmaDes from "../../Services/ServicesDes/FigmaDes/FigmaDes";
+import WebsiteDes from "../../Services/ServicesDes/WebsiteDes/WebsiteDes";
+import StoreDes from "../../Services/ServicesDes/StoreDes/StoreDes";
+import AppDec from "../../Services/ServicesDes/AppDec/AppDec";
+import FigmaImage from "../../Services/ServicesImages/FigmaImage/FigmaImage";
 
 export default function Profile() {
   const [activeSection, setActiveSection] = useState("Feature");
@@ -13,17 +16,54 @@ export default function Profile() {
   const renderSection = () => {
     switch (activeSection) {
       case "Feature":
-        return <Feature />;
+        return (
+          <>
+            <FeatureImage />
+            <FeatureDes />
+          </>
+        );
       case "Assets":
-        return <AssetsPage />;
+        return (
+          <>
+            <FeatureImage />
+            <AssetDes />
+          </>
+        );
       case "Figma":
-        return <Figma />;
-      case "Website":
-        return <Website />;
+        return (
+          <>
+            <FigmaImage />
+            <FigmaDes />
+          </>
+        );
+      case "Websites":
+        return (
+          <>
+            <FeatureImage />
+            <WebsiteDes />
+          </>
+        );
       case "Store":
-        return <Store />;
+        return (
+          <>
+            <FeatureImage />
+            <StoreDes />
+          </>
+        );
+      case "MobileApps":
+        return (
+          <>
+            <FeatureImage />
+            <AppDec />
+          </>
+        );
       default:
-        return <Feature />;
+        return (
+          <>
+            <FeatureImage />
+            <FeatureDes />
+          </>
+        );
     }
   };
 
