@@ -1,4 +1,112 @@
-.Works {
-  background-color: orangered;
+.works-section {
+  /* padding: 50px 0; */
+  background-color: #f5f5f5;
+  text-align: center;
+  overflow: hidden;
+}
+
+.works-header h2 {
+  font-size: 2.25rem; /* Responsive font size for headers */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+
+/* Slider container styling */
+.works-slider {
+  width: 80%; /* Slightly increase width for smaller screens */
+  max-width: 1200px; /* Max width for larger screens */
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* Prevent scrollbars */
+  margin-bottom: 10px;
+}
+
+.works-slider-container {
+  display: flex;
+  overflow: hidden; /* Hide overflow within the slider */
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  scroll-behavior: smooth; /* Smooth scrolling for navigation */
+}
+
+/* Each slide item */
+.works-slider-item {
+  flex-shrink: 0;
   width: 100%;
+  overflow: hidden; /* Hide any overflow */
+}
+
+.works-slider-item img,
+.works-slider-item iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Navigation buttons */
+.works-slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.works-slider-button.left {
+  left: 10px;
+}
+
+.works-slider-button.right {
+  right: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .works-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .works-header p {
+    font-size: 1rem;
+  }
+
+  .works-slider {
+    width: 95%; /* Slightly increase width on smaller screens */
+  }
+
+  .works-slider-button {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .works-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .works-header p {
+    font-size: 0.875rem;
+  }
+
+  .works-slider {
+    width: 100%; /* Full width on extra small screens */
+  }
+
+  .works-slider-button {
+    width: 30px;
+    height: 30px;
+  }
 }

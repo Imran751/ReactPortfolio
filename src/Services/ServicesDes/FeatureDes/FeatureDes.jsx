@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./FeatureDes.css";
 
 export default function FeatureDes() {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/features'); // Navigate to the features page
+  };
+
   return (
     <div className="FeatureDes" id="FeatureDes">
       <div className="feature-page-content">
@@ -17,6 +24,12 @@ export default function FeatureDes() {
           <a href="#Contact" className="cta-button">
             Book a Consultation
           </a>
+        </div>
+        <div className="cta-button-container">
+        <button onClick={handleNavigate} className="cta-button">
+  Learn More&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;
+</button>
+
         </div>
       </div>
     </div>
