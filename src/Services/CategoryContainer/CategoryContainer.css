@@ -3,14 +3,17 @@
   display: flex;
   align-items: center;
   position: relative;
-  width: 100%;
+  width: 80%;
   overflow: hidden; /* Ensure content doesn't overflow */
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Category Container Styles */
 .category-container {
   display: flex;
-  width: 100%;
+  width: 80%;
   overflow-x: auto;
   /* white-space: nowrap; */
   justify-content: center;
@@ -63,14 +66,17 @@
 
 .scroll-button.left {
   left: 0;
+  color: transparent;
 }
 
 .scroll-button.right {
   right: 0;
+  color: transparent;
 }
 
 .scroll-button:hover {
   background-color: #555;
+  color: #fff;
 }
 
 /* Media Query for Portrait Devices */

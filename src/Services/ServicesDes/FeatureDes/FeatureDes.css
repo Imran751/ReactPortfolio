@@ -1,72 +1,100 @@
-/* Feature Component Styles */
-.Feature {
-  background-color: orchid;
+.FeatureDes {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.feature-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  max-width: 1200px;
+  gap: 5px;
+}
+
+.feature-video-container {
+  width: 100%;
+  max-width: 600px; /* Adjust the max width as needed */
+  display: flex; /* Make the container a flexbox */
+  justify-content: center; /* Center the iframe horizontally */
+  align-items: center; /* Center the iframe vertically */
+  background-color: #fff;
+  padding: 10px; /* Optional: Add padding around the container */
+}
+
+/* Optional: Remove this rule if it is not needed */
+.feature-video-container-iframe {
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Hide any overflow from this section */
 }
 
-.FeatureHeading {
-  text-align: center;
-  padding-bottom: 20px;
-}
 
 .feature-page-content {
-  max-width: 70vw;
-  margin: 0 auto;
-  padding: 30px 10px;
-  text-align: center;
-  overflow: hidden; /* Hide overflow within the content area */
+  max-width: 600px;
+  text-align: left;
+  font-size: 0.9rem; /* Small size text */
+  
+  background-color: blue;
 }
 
-.feature-page-content h2 {
-  margin-bottom: 15px;
-  color: #333;
-  font-size: 18px;
-  font-weight: bold;
+/* Flex direction change for larger screens */
+/* Styles for screens wider than 768px */
+@media screen and (min-width: 768px) {
+  .feature-page-container {
+    flex-direction: row;
+  }
+
+  .feature-page-content {
+    padding-left: 20px;
+    font-size: 0.9rem; /* Set font size to 0.9rem for large displays */
+  }
+
+  .cta-button {
+    font-size: 0.9rem; /* Set button text size to 0.9rem for large displays */
+  }
 }
 
-.feature-page-content p {
-  margin-bottom: 20px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #444;
+
+/* Flex direction for portrait devices */
+@media screen and (max-width: 767px) {
+  .feature-page-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .feature-page-content {
+    text-align: center;
+    font-size: 0.5rem;
+  }
+
+  .feature-video-container {
+        margin-top: 20px; /* Optional: Add padding around the container */
+  }
+
+  
 }
 
 .cta-button-container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center; /* Center buttons horizontally */
-  width: 100%;
+  margin-top: 10px;
 }
 
 .cta-button {
   display: inline-block;
-  padding: 12px 20px;
-  background-color: crimson;
+  padding: 5px 8px;
+  background-color: #007bff;
   color: white;
-  text-decoration: none; /* Remove underline from the link */
+  text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  font-size: 14px;
-  width: 200px; /* Set a fixed width for consistency */
-  text-align: center; /* Center text inside the button */
-  border: none; /* Remove border from button */
-  cursor: pointer; /* Pointer cursor for button */
+  font-size: 0.5rem; /* Small size button text */
 }
 
 .cta-button:hover {
-  background-color: darkred;
+  background-color: #0056b3;
 }
 
-.cta-button a {
-  color: white; /* Ensure text color is white for links inside buttons */
-  text-decoration: none; /* Remove underline from links */
-}
-
-.cta-button button {
-  background: crimson; /* Button background */
-  border: none; /* Remove default button border */
-  cursor: pointer; /* Pointer cursor */
+button.cta-button {
+  border: none;
+  cursor: pointer;
 }

@@ -25,6 +25,7 @@ export default function FeatureImage({ setActiveSection }) {
   ];
 
   const containerRef = useRef(null);
+  const itemRefs = useRef([]);
 
   const scrollLeft = () => {
     containerRef.current.scrollBy({
@@ -40,6 +41,16 @@ export default function FeatureImage({ setActiveSection }) {
     });
   };
 
+  const focusImage = (index) => {
+    if (itemRefs.current[index]) {
+      itemRefs.current[index].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  };
+
   return (
     <div className="FeatureImage-wrapper">
       <button className="scroll-button lefts" onClick={scrollLeft}>
@@ -47,7 +58,12 @@ export default function FeatureImage({ setActiveSection }) {
       </button>
       <div className="FeatureImage-container" ref={containerRef}>
         {categories.map((FeatureImage, index) => (
-          <div key={index} className="FeatureImage-item">
+          <div
+            key={index}
+            className="FeatureImage-item"
+            ref={(el) => (itemRefs.current[index] = el)}
+            onClick={() => focusImage(index)}
+          >
             <img src={FeatureImage.image} alt={FeatureImage.name} />
           </div>
         ))}

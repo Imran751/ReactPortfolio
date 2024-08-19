@@ -3,11 +3,11 @@
   display: flex;
   align-items: center;
   position: relative;
-  width: 100%;
+  width: 80%;
   overflow: hidden; /* Ensure content doesn't overflow */
   padding-top: 10px;
   justify-content: center;
-  align-items: center;
+  margin: 0 auto;
 }
 
 /* FeatureImage Container Styles */
@@ -32,14 +32,25 @@
   scroll-snap-align: center; /* Align images to center */
   border-radius: 5px; /* Rounded corners for images */
   overflow: hidden; /* Hide overflow */
-  margin: 0 10px;
+  
+  margin-right: 50px; /* Adjust margin as needed */
+  background-color: aliceblue;
+  padding: 10px;
+
+  width: 25vw; /* Width based on viewport width */
+  height: calc(25vw * 9 / 16); /* Calculate height based on the 16:9 aspect ratio */
+  
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
 }
 
 /* FeatureImage Item Styles */
 .FeatureImage-item img {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  width: 18vw; /* Width based on viewport width */
+  height: auto;
   display: block; /* Remove any extra space below image */
+  object-fit: cover; /* Ensure the image covers the container properly */
 }
 
 /* Scroll Button Styles */
@@ -73,36 +84,35 @@
 /* Media Query for Large Screens (3 images) */
 @media screen and (min-width: 1200px) {
   .FeatureImage-item {
-    width: calc(
-      (60% / 2.5) - 20px
-    ); /* Reduce size to show 3 images at a time */
-    
+    width: 25vw; /* Width based on viewport width */
+    height: calc(25vw * 9 / 16); /* Calculate height based on the 16:9 aspect ratio */
   }
 }
 
 /* Media Query for Medium Screens (2 images) */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .FeatureImage-item {
-    width: calc(
-      (70% / 2.5) - 20px
-    ); /* Reduce size to show 2 images at a time */
+    width: 25vw; /* Width based on viewport width */
+    height: calc(25vw * 9 / 16); /* Calculate height based on the 16:9 aspect ratio */
   }
 }
 
 /* Media Query for Small Screens/Portrait (1 image) */
 @media screen and (min-width: 401px) and (max-width: 767px) {
   .FeatureImage-item {
-    width: calc(70% - 20px); /* Reduce size to show 1 image at a time */
+    width: 50vw; /* Width based on viewport width */
+    height: calc(50vw * 9 / 16); /* Calculate height based on the 16:9 aspect ratio */
   }
-  
 }
+
 /* Media Query for Small Screens/Portrait (1 image) */
 @media screen and (max-width: 400px) {
   .FeatureImage-item {
-    width: calc(70% - 20px); /* Reduce size to show 1 image at a time */ 
-  }
-  .scroll-buttons{
-    display: none;
+    width: 50vw; /* Width based on viewport width */
+    height: calc(50vw * 9 / 16); /* Calculate height based on the 16:9 aspect ratio */ 
   }
   
+  .scroll-buttons {
+    display: none;
+  }
 }
