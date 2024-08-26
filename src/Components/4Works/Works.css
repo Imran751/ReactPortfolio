@@ -1,112 +1,115 @@
-.works-section {
-  /* padding: 50px 0; */
-  background-color: #f5f5f5;
+.feature-image-section {
+  padding: 20px;
+  background-color: #f9f9f9;
   text-align: center;
-  overflow: hidden;
 }
 
-.works-header h2 {
-  font-size: 2.25rem; /* Responsive font size for headers */
+.feature-image-header {
+  margin-bottom: 20px;
+}
+
+.feature-image-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slider-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-content {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 1200px; /* Fixed maximum width */
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.media {
+  flex: 2; /* Give the image more space */
+}
+
+.media img {
+  width: 80%;
+  /* max-height: 500px; */
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.description {
+  flex: 1; /* Give the text less space */
+  margin-left: 20px;
+  text-align: left;
+}
+
+.description h3 {
+  font-size: 24px;
   color: #333;
   margin-bottom: 10px;
 }
 
-
-/* Slider container styling */
-.works-slider {
-  width: 80%; /* Slightly increase width for smaller screens */
-  max-width: 1200px; /* Max width for larger screens */
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden; /* Prevent scrollbars */
-  margin-bottom: 10px;
+.description p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
-.works-slider-container {
-  display: flex;
-  overflow: hidden; /* Hide overflow within the slider */
-  aspect-ratio: 16 / 9;
-  border-radius: 10px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  scroll-behavior: smooth; /* Smooth scrolling for navigation */
-}
-
-/* Each slide item */
-.works-slider-item {
-  flex-shrink: 0;
-  width: 100%;
-  overflow: hidden; /* Hide any overflow */
-}
-
-.works-slider-item img,
-.works-slider-item iframe {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* Navigation buttons */
-.works-slider-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+.learn-more-button {
+  background-color: #666;
+  color: #fff;
+  padding: 10px 20px;
   border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 4px;
   cursor: pointer;
-  z-index: 2;
+  font-size: 16px;
 }
 
-.works-slider-button.left {
-  left: 10px;
+.learn-more-button:hover {
+  background-color: #0056b3;
 }
 
-.works-slider-button.right {
-  right: 10px;
-}
-
-/* Media queries for responsiveness */
 @media (max-width: 768px) {
-  .works-header h2 {
-    font-size: 1.75rem;
+  .slider-content {
+    flex-direction: column;
+    width: 100%; /* Ensure full width on small screens */
+    max-width: 100%; /* Ensure the max width is the full screen width */
+    height: 70vh;
   }
 
-  .works-header p {
-    font-size: 1rem;
+  .media img {
+    width: 50vw;
+    max-height: 500px; /* Adjust image height for smaller screens */
   }
 
-  .works-slider {
-    width: 95%; /* Slightly increase width on smaller screens */
+  .description {
+    margin-left: 0;
+    /* margin-top: 20px; */
+    text-align: center;
   }
 
-  .works-slider-button {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-@media (max-width: 480px) {
-  .works-header h2 {
-    font-size: 1.5rem;
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
-  .works-header p {
-    font-size: 0.875rem;
+  .slider-button.left {
+    left: 10px;
   }
 
-  .works-slider {
-    width: 100%; /* Full width on extra small screens */
-  }
-
-  .works-slider-button {
-    width: 30px;
-    height: 30px;
+  .slider-button.right {
+    right: 50px;
   }
 }
