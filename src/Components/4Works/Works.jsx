@@ -39,7 +39,7 @@ export default function FeatureImage({ setActiveSection }) {
   };
 
   return (
-    <div className="feature-image-section">
+    <div className="feature-image-section" id="Works">
       <div className="feature-image-header">
         <h2>My Projects</h2>
       </div>

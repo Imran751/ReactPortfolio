@@ -1,4 +1,126 @@
-.Testimonials {
-    background-color: tomato;
+.testimonials-container {
     width: 100%;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .testimonials-header {
+    color: #222;
+    margin-bottom: 30px;
+  }
+  
+  .testimonials-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for slider movement */
+  }
+  
+  .testimonial-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 30%; /* Adjusted to show 3 cards */
+    max-width: 300px; /* Added max-width */
+    height: 450px; /* Increased height */
+    text-align: center; /* Center the text and image */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
+
+.image-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid crimson; /* Solid black border */
+    background: linear-gradient(135deg, crimson, rgb(245, 152, 135)); /* Gradient border */
+    padding: 1px; /* Padding for a thicker border */
+    box-shadow: 0 4px 8px rgba(230, 42, 42, 0.2); /* Subtle shadow for depth */
+    overflow: hidden;
+    margin: 0 auto 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%; /* Ensures the image itself is round */
+}
+
+
+
+
+
+
+
+  
+  .testimonial-text {
+    text-align: left;
+  }
+  
+  .testimonial-quote {
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-name {
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .testimonial-title {
+    font-size: 0.95em;
+    color: #555;
+  }
+  
+  .testimonials-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -300px;
+  }
+  
+  .nav-button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 12px;
+    font-size: 1.5em;
+  }
+  
+  .nav-button:hover {
+    background-color: #003f8a;
+  }
+  
+  @media (max-width: 767px) {
+    .testimonial-card {
+      width: 100%; /* Ensure the card takes up the full width */
+      display: none; /* Hide all testimonial cards by default */
+    }
+  
+    .testimonial-card:first-child {
+      display: block; /* Only show the first testimonial card */
+    }
+  
+    .testimonials-slider {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .testimonials-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+      }
+  }
+  
