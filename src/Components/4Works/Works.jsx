@@ -64,6 +64,7 @@ export default function FeatureImage({ setActiveSection }) {
         <button className="slider-button right" onClick={handleNext}>
           &gt;
         </button>
+        
       </div>
     </div>
   );

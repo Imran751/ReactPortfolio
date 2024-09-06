@@ -1,31 +1,37 @@
-import React, { useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { ref, listAll, getDownloadURL } from "firebase/storage";
+import { storage } from "../../../Components/Firebase";
 import "./FigmaImage.css";
 
-// Import your images
-import Image8 from "../../../Assets/FigmaImages/Nike Shoes.png";
-import Image1 from "../../../Assets/FigmaImages/Coconut Oil.png";
-import Image4 from "../../../Assets/FigmaImages/Kitchen Knife.png";
-import Image2 from "../../../Assets/FigmaImages/Home-made Cookies.png";
-import Image3 from "../../../Assets/FigmaImages/Honey Shampoo.png";
-import Image5 from "../../../Assets/FigmaImages/Laptop.png";
-import Image6 from "../../../Assets/FigmaImages/MenShirt.png";
-import Image7 from "../../../Assets/FigmaImages/Mobile.png";
-
 export default function FigmaImage({ setActiveSection }) {
-  // Define the categories with image sources
-  const categories = [
-    { name: "Image8", image: Image8 },
-    { name: "Image1", image: Image1 },
-    { name: "Image2", image: Image2 },
-    { name: "Image3", image: Image3 },
-    { name: "Image4", image: Image4 },
-    { name: "Image5", image: Image5 },
-    { name: "Image6", image: Image6 },
-    { name: "Image7", image: Image7 },
-  ];
-
+  const [categories, setCategories] = useState([]);
   const containerRef = useRef(null);
+  const itemRefs = useRef([]);
 
+  // Fetch images from Firebase Storage
+  useEffect(() => {
+    const storageRef = ref(storage, "Figma/"); // Adjust folder name as needed
+    const fetchImages = async () => {
+      try {
+        const result = await listAll(storageRef);
+        const imagePromises = result.items.map((imageRef) =>
+          getDownloadURL(imageRef)
+        );
+        const imageUrls = await Promise.all(imagePromises);
+        const imageData = imageUrls.map((url, index) => ({
+          name: `Image${index + 1}`,
+          image: url,
+        }));
+        setCategories(imageData);
+      } catch (error) {
+        console.error("Error fetching images from Firebase:", error);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
+  // Scroll functions
   const scrollLeft = () => {
     containerRef.current.scrollBy({
       left: -containerRef.current.clientWidth / 2,
@@ -40,17 +46,36 @@ export default function FigmaImage({ setActiveSection }) {
     });
   };
 
+  const focusImage = (index) => {
+    if (itemRefs.current[index]) {
+      itemRefs.current[index].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  };
+
   return (
     <div className="FigmaImage-wrapper">
       <button className="scroll-button lefts" onClick={scrollLeft}>
         &lt;
       </button>
       <div className="FigmaImage-container" ref={containerRef}>
-        {categories.map((FigmaImage, index) => (
-          <div key={index} className="FigmaImage-item">
-            <img src={FigmaImage.image} alt={FigmaImage.name} />
-          </div>
-        ))}
+        {categories.length > 0 ? (
+          categories.map((FigmaImage, index) => (
+            <div
+              key={index}
+              className="FigmaImage-item"
+              ref={(el) => (itemRefs.current[index] = el)}
+              onClick={() => focusImage(index)}
+            >
+              <img src={FigmaImage.image} alt={FigmaImage.name} />
+            </div>
+          ))
+        ) : (
+          <p>Loading images...</p>
+        )}
       </div>
       <button className="scroll-button rights" onClick={scrollRight}>
         &gt;

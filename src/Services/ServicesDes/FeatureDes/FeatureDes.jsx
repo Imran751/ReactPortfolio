@@ -25,15 +25,17 @@ export default function FeatureDes() {
             extraordinary together.
           </p>
 
-          <div className="cta-button-container">
+          <div className="theButtons">
+          <div className="BookingBtnContainer">
             <a href="#Contact" className="cta-button">
               Book a Consultation
             </a>
           </div>
-          <div className="cta-button-container">
+          <div className="LearnBtnContainer">
             <button onClick={handleNavigate} className="cta-button">
               Learn More&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;
             </button>
+          </div>
           </div>
         </div>
       </div>

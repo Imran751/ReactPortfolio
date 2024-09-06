@@ -10,18 +10,29 @@
 .feature-image-slider {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
 }
 
 .slider-button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
   z-index: 10;
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 12px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 20px;
+  font-size: 1.5em;
+  justify-content: center;
+  align-items: center;
 }
+
+.slider-button:hover {
+  background-color: #003f8a;
+}
+
+
 
 .slider-content {
   display: flex;
@@ -101,6 +112,7 @@
   .slider-button {
     position: absolute;
     top: 50%;
+    padding: 12px 24px;
     transform: translateY(-50%);
   }
 
@@ -109,6 +121,6 @@
   }
 
   .slider-button.right {
-    right: 50px;
+    right: 10px;
   }
 }
