@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
-import { storage } from "../../../Components/Firebase"; // Adjust the path to your Firebase config
-import "./FeatureImage.css";
+import { storage } from "../../../Components/Firebase";
+import "./AssetsImage.css";
 
-export default function FeatureImage({ setActiveSection }) {
+export default function AssetsImage({ setActiveSection }) {
   const [categories, setCategories] = useState([]);
   const containerRef = useRef(null);
   const itemRefs = useRef([]);
 
   // Fetch images from Firebase Storage
   useEffect(() => {
-    const storageRef = ref(storage, "FeatureImages/"); // Folder name as "FeatureImages"
+    const storageRef = ref(storage, "Assets/"); // Adjust folder name as needed
     const fetchImages = async () => {
       try {
         const result = await listAll(storageRef);
@@ -57,20 +57,20 @@ export default function FeatureImage({ setActiveSection }) {
   };
 
   return (
-    <div className="FeatureImage-wrapper">
+    <div className="AssetsImage-wrapper">
       <button className="scroll-button lefts" onClick={scrollLeft}>
         &lt;
       </button>
-      <div className="FeatureImage-container" ref={containerRef}>
+      <div className="AssetsImage-container" ref={containerRef}>
         {categories.length > 0 ? (
-          categories.map((FeatureImage, index) => (
+          categories.map((AssetsImage, index) => (
             <div
               key={index}
-              className="FeatureImage-item"
+              className="AssetsImage-item"
               ref={(el) => (itemRefs.current[index] = el)}
               onClick={() => focusImage(index)}
             >
-              <img src={FeatureImage.image} alt={FeatureImage.name} />
+              <img src={AssetsImage.image} alt={AssetsImage.name} />
             </div>
           ))
         ) : (

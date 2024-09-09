@@ -1,5 +1,5 @@
-/* Wrapper around the FigmaImage container and scroll buttons */
-.FigmaImage-wrapper {
+/* Wrapper around the WebImage container and scroll buttons */
+.WebImage-wrapper {
   display: flex;
   align-items: center;
   position: relative;
@@ -10,8 +10,8 @@
   margin: 0 auto;
 }
 
-/* FigmaImage Container Styles */
-.FigmaImage-container {
+/* WebImage Container Styles */
+.WebImage-container {
   display: flex;
   width: 70%;
   overflow-x: auto;
@@ -22,12 +22,12 @@
   -ms-overflow-style: none;
 }
 
-.FigmaImage-container::-webkit-scrollbar {
+.WebImage-container::-webkit-scrollbar {
   display: none;
 }
 
 /* Ensure smooth snapping to images */
-.FigmaImage-item {
+.WebImage-item {
   flex: 0 0 auto;
   scroll-snap-align: center;
   border-radius: 5px;
@@ -45,8 +45,8 @@
   align-items: center;
 }
 
-/* FigmaImage Item Styles */
-.FigmaImage-item img {
+/* WebImage Item Styles */
+.WebImage-item img {
   width: 100%;
   height: auto;
   display: block;
@@ -83,7 +83,7 @@
 
 /* Media Query for Large Screens (3 images) */
 @media screen and (min-width: 1200px) {
-  .FigmaImage-item {
+  .WebImage-item {
     width: 25vw;
     height: calc(25vw * 9 / 16);
   }
@@ -91,7 +91,7 @@
 
 /* Media Query for Medium Screens (2 images) */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .FigmaImage-item {
+  .WebImage-item {
     width: 25vw;
     height: calc(25vw * 9 / 16);
   }
@@ -99,7 +99,7 @@
 
 /* Media Query for Small Screens/Portrait (1 image) */
 @media screen and (min-width: 401px) and (max-width: 767px) {
-  .FigmaImage-item {
+  .WebImage-item {
     width: 50vw;
     height: calc(50vw * 9 / 16);
   }
@@ -107,7 +107,7 @@
 
 /* Media Query for Extra Small Screens (1 image) */
 @media screen and (max-width: 400px) {
-  .FigmaImage-item {
+  .WebImage-item {
     width: 50vw;
     height: calc(50vw * 9 / 16);
   }

@@ -47,7 +47,7 @@
 
 /* FeatureImage Item Styles */
 .FeatureImage-item img {
-  width: 18vw; /* Width based on viewport width */
+  width: 100%; /* Width based on viewport width */
   height: auto;
   display: block; /* Remove any extra space below image */
   object-fit: cover; /* Ensure the image covers the container properly */
