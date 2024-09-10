@@ -17,7 +17,7 @@ export default function Hero() {
     <div className="Hero" id="Hero">
       <div className="left">
         <div className="imgContainer">
-          <img src={require("../../Assets/imran.png")} alt="Imran" />
+          <img src={require("../../Assets/MuhammadImran.png")} alt="Imran" />
         </div>
       </div>
       <div className="right">

@@ -1,13 +1,13 @@
-.feature-image-section {
+.Works-image-section {
   background-color: #f9f9f9;
   text-align: center;
 }
 
-.feature-image-header {
+.Works-image-header {
   margin-bottom: 20px;
 }
 
-.feature-image-slider {
+.Works-image-slider {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,23 +60,23 @@
 
 .description {
   flex: 1; /* Give the text less space */
-  margin-left: 20px;
+  margin-left: 16px;
   text-align: left;
 }
 
 .description h3 {
-  font-size: 24px;
+  font-size: 20px;
   color: #333;
   margin-bottom: 10px;
 }
 
 .description p {
-  font-size: 16px;
+  font-size: 14px;
   color: #666;
   margin-bottom: 20px;
 }
 
-.learn-more-button {
+/* .learn-more-button {
   background-color: #666;
   color: #fff;
   padding: 10px 20px;
@@ -88,7 +88,7 @@
 
 .learn-more-button:hover {
   background-color: #0056b3;
-}
+} */
 
 @media (max-width: 768px) {
   .slider-content {
@@ -107,6 +107,10 @@
     margin-left: 0;
     /* margin-top: 20px; */
     text-align: center;
+  }
+
+  .description p {
+    font-size: 10px;
   }
 
   .slider-button {

@@ -1,7 +1,6 @@
 .FeatureDes {
   display: flex;
   justify-content: center;
-  /* padding: 20px; */
   background-color: #f8f9fa; /* Light background for a clean look */
 }
 
@@ -12,11 +11,10 @@
   justify-content: center;
   width: 100%;
   max-width: 1200px;
-  gap: 20px; /* Increased gap for better spacing */
+  gap: 10px; /* Increased gap for better spacing */
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   border-radius: 10px;
-  padding: 20px;
 }
 
 .feature-video-container {
@@ -36,30 +34,26 @@
   text-align: left;
   font-size: 1rem;
   color: #333; /* Darker text for better readability */
-  /* line-height: 1.6; */
   padding: 10px;
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 5px;
   color: #007bff; /* Accent color */
 }
 
 p {
-  margin-bottom: 20px;
+  font-size: 10px; 
+  margin-bottom: 10px;
 }
 
 .theButtons {
   display: flex; /* Use flexbox for button alignment */
   gap: 10px; /* Space between buttons */
-  margin-top: 15px;
+  margin-top: 5px;
   justify-content: center; /* Center buttons horizontally on large screens */
 }
-
-/* .BookingBtnContainer, .LearnBtnContainer {} */
-  /* These containers will inherit styling from .theButtons */
-
 
 .cta-button {
   display: inline-block;
@@ -83,31 +77,44 @@ button.cta-button {
   cursor: pointer;
 }
 
-
 @media screen and (min-width: 768px) {
   .feature-page-container {
     flex-direction: row;
-    gap: 40px;
+    gap: 10px;
   }
 
   .feature-page-content {
-    padding-left: 30px;
     text-align: left;
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
   }
+
+  
 }
 
 @media screen and (max-width: 767px) {
   .feature-page-container {
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
   }
 
   .feature-page-content {
     text-align: center;
-    font-size: 0.9rem;
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 0.5rem;
+      margin-bottom: 20px;
+    }
   }
 
   .cta-button {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
   }
 }

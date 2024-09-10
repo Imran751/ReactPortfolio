@@ -51,7 +51,7 @@ const TopBar = () => {
       </div>
       <div className="right">
         <img
-          src={require("../../Assets/imran.png")}
+          src={require("../../Assets/MuhammadImran.png")}
           alt="User"
           className="myImage"
         />

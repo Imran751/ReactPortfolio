@@ -1,70 +1,32 @@
 import { useState, useEffect } from "react";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { app } from "../../Components/Firebase"; // Ensure this import is correct
 import "./Testimonials.css";
 
-// Import your images with unique variable names
-import Image1 from "../../Assets/ClientsImages/1.png";
-import Image2 from "../../Assets/ClientsImages/2.png";
-import Image3 from "../../Assets/ClientsImages/3.png";
-import Image4 from "../../Assets/ClientsImages/4.png";
-import Image5 from "../../Assets/ClientsImages/5.png";
-import Image6 from "../../Assets/ClientsImages/6.png";
-import Image7 from "../../Assets/ClientsImages/7.png";
-import Image8 from "../../Assets/ClientsImages/8.png";
+// Initialize Firestore
+const db = getFirestore(app);
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      image: Image1, // Use the imported image variable
-      quote: "This company exceeded our expectations. Their attention to detail is impeccable.",
-      name: "Jane Smith",
-      title: "Marketing Director, ABC Corp",
-    },
-    {
-      image: Image2, // Use the imported image variable
-      quote: "Professional and dedicated. We couldn’t be happier with the results.",
-      name: "Robert Johnson",
-      title: "COO, XYZ Ltd",
-    },
-    {
-      image: Image3,
-      quote: "Their team is amazing! They delivered top-notch service from start to finish.",
-      name: "Emily Davis",
-      title: "Founder, StartUp Co.",
-    },
-    {
-      image: Image4,
-      quote: "Exceptional work! They really understood our needs and delivered beyond expectations.",
-      name: "Michael Brown",
-      title: "CTO, Tech Innovators",
-    },
-    {
-      image: Image5,
-      quote: "We’ve seen remarkable results. Their expertise is second to none.",
-      name: "Sarah Wilson",
-      title: "Head of Operations, FastTrack Inc.",
-    },
-    {
-      image: Image6,
-      quote: "The attention to detail and the personalized service were outstanding. Truly a game-changer.",
-      name: "Lisa Turner",
-      title: "Product Manager, InnovateNow",
-    },
-    {
-      image: Image7,
-      quote: "Their innovative approach and dedication to our success were evident in every interaction.",
-      name: "Daniel Lewis",
-      title: "Chief Executive Officer, GreenTech",
-    },
-    {
-      image: Image8,
-      quote: "From concept to execution, their expertise made a significant impact on our project’s success.",
-      name: "Sophia Martinez",
-      title: "Director of Operations, Future Enterprises",
-    },
-    
-  ];
-
+  const [testimonials, setTestimonials] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "testimonials"));
+        const fetchedTestimonials = querySnapshot.docs.map((doc) => doc.data());
+
+        // Debugging: Log fetched data
+        console.log("Fetched Testimonials:", fetchedTestimonials);
+
+        setTestimonials(fetchedTestimonials);
+      } catch (error) {
+        console.error("Error fetching testimonials: ", error);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
@@ -77,21 +39,22 @@ export default function Testimonials() {
   };
 
   useEffect(() => {
-    const handleNext = () => {
+    const autoAdvance = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     };
-  
-    const interval = setInterval(handleNext, 5000); // Automatically advance every 5 seconds
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [testimonials.length]); // Include testimonials.length as a dependency
-  
-  
 
-  const visibleTestimonials = [
-    testimonials[currentIndex],
-    testimonials[(currentIndex + 1) % testimonials.length],
-    testimonials[(currentIndex + 2) % testimonials.length],
-  ];
+    const interval = setInterval(autoAdvance, 5000); // Automatically advance every 5 seconds
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [testimonials.length]);
+
+  // Ensure there are testimonials to display
+  const visibleTestimonials = testimonials.length > 0
+    ? [
+        testimonials[currentIndex],
+        testimonials[(currentIndex + 1) % testimonials.length],
+        testimonials[(currentIndex + 2) % testimonials.length],
+      ]
+    : [];
 
   return (
     <div className="testimonials-container" id="Testimonials">
@@ -99,17 +62,18 @@ export default function Testimonials() {
       <div className="testimonials-slider">
         {visibleTestimonials.map((testimonial, index) => (
           <div key={index} className="testimonial-card">
-           <div className="image-container">
-    <img
-      src={testimonial.image}
-      alt={`Client ${currentIndex + index + 1}`}
-      className="testimonial-image"
-    />
-  </div>
+            <div className="image-container">
+              {/* Ensure image path is correctly used */}
+              <img
+                src={testimonial?.image || "default-image.png"} // Replace with a placeholder if needed
+                alt={`Client ${currentIndex + index + 1}`}
+                className="testimonial-image"
+              />
+            </div>
             <div className="testimonial-text">
-              <p className="testimonial-quote">"{testimonial.quote}"</p>
-              <p className="testimonial-name">{testimonial.name}</p>
-              <p className="testimonial-title">{testimonial.title}</p>
+              <p className="testimonial-quote">"{testimonial?.quote || "No quote available"}"</p>
+              <p className="testimonial-name">{testimonial?.name || "Unknown"}</p>
+              <p className="testimonial-title">{testimonial?.title || "No title available"}</p>
             </div>
           </div>
         ))}
