@@ -17,8 +17,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const googleScriptURL = "https://script.google.com/macros/s/AKfycbzpBO5lJH-6fNQKAjtprAsGNVSns91zn7Las2m0uM31uXrDXgRSjtBOAwQTqvlRZ2S8/exec"; 
-    // Replace with your actual Google Script URL (this is added to muhammadimran as ReactPortfolioContactUs)
+    const googleScriptURL = "https://script.google.com/macros/s/AKfycbzpBO5lJH-6fNQKAjtprAsGNVSns91zn7Las2m0uM31uXrDXgRSjtBOAwQTqvlRZ2S8/exec";
 
     try {
       const encodedData = new URLSearchParams(formData).toString();
@@ -95,7 +94,18 @@ export default function Contact() {
             ></textarea>
           </div>
           <button type="submit" className="submit-button">Send Message</button>
+          
         </form>
+        <br />
+        <p>OR</p>
+        {/* Button for Calendly Appointment */}
+        
+        <div className="calendly-button-container">
+          
+          <a href="https://calendly.com/muhammadimranjhang/30min" target="_blank" rel="noopener noreferrer">
+            <button className="calendly-button">Book an Appointment</button>
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -1,68 +1,119 @@
 .contact-section {
-    background-color: #f4f4f4;
-    padding: 0px 20px;
-    text-align: center;
-  }
-  
+  background-color: #f4f4f4;
+  padding: 10px 15px; /* Reduced padding */
+  text-align: center;
+  height: 100vh; /* Adjust height as per the requirement */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container {
+  max-width: 600px; /* Reduced width */
+  margin: 0 auto;
+  background: #fff;
+  padding: 10px 20px; /* Reduced padding */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 40px; /* Reduced margin */
+  font-size: 1.6rem; /* Reduced font size */
+  color: #222;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 10px; /* Reduced margin */
+  font-size: 0.9rem; /* Reduced font size */
+  color: #555;
+  line-height: 1.4; /* Reduced line height */
+}
+
+.contact-form .form-group {
+  margin-bottom: 10px; /* Increased slightly for better spacing */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px; /* Reduced padding */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 0.75rem; /* Slightly reduced font size */
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #333;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.submit-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px; /* Reduced padding */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem; /* Reduced font size */
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+/* .calendly-button-container {
+  margin-top: 10px;
+} */
+
+.calendly-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px; /* Reduced padding */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem; /* Reduced font size */
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+}
+
+.calendly-button:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
   .contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
   }
-  
+
   h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #333;
+    font-size: 1.5rem; /* Slightly smaller on mobile */
   }
-  
+
   p {
-    margin-bottom: 30px;
-    font-size: 1rem;
-    color: #666;
+    font-size: 0.9rem; /* Reduced font size */
   }
-  
-  .contact-form .form-group {
-    margin-bottom: 20px;
+
+  .submit-button,
+  .calendly-button {
+    font-size: 0.9rem;
+    padding: 10px 15px; /* Compact padding */
   }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-color: #333;
-    outline: none;
-  }
-  
-  .contact-form input::placeholder,
-  .contact-form textarea::placeholder {
-    color: #999;
-  }
-  
-  .submit-button {
-    background-color: #333;
-    color: #fff;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #555;
-  }
-  
+}

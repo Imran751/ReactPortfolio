@@ -26,11 +26,12 @@ export default function FeatureDes() {
           </p>
 
           <div className="theButtons">
-          <div className="BookingBtnContainer">
-            <a href="#Contact" className="cta-button">
-              Book a Consultation
-            </a>
-          </div>
+          {/* Button for Calendly Appointment */}
+        <div className="calendly-button-container">
+          <a href="https://calendly.com/muhammadimranjhang/30min" target="_blank" rel="noopener noreferrer">
+            <button className="calendly-button">Book an Appointment</button>
+          </a>
+        </div>
           <div className="LearnBtnContainer">
             <button onClick={handleNavigate} className="cta-button">
               Learn More&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;
