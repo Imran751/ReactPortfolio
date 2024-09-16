@@ -1,12 +1,109 @@
-/* Store Component Styles */
-.Store {
-  background-color: orchid;
-  width: 100%;
+.StoreDes {
+  display: flex;
   justify-content: center;
-  align-items: center;
+  background-color: #f8f9fa; /* Light background for a clean look */
 }
 
-.StoreHeading {
-  text-align: center;
-  padding-bottom: 20px;
+.store-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 10px; /* Increased gap for better spacing */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 10px;
+}
+
+.store-page-content {
+  max-width: 600px;
+  text-align: left; /* Consistent text alignment */
+  font-size: 1rem;
+  color: #333; /* Darker text for better readability */
+  padding: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #007bff; /* Accent color */
+}
+
+p {
+  font-size: 10px;
+  margin-bottom: 10px;
+  overflow: visible; /* Ensure content is visible without scroll */
+  height: auto; /* Allow the height to adjust based on content */
+}
+
+.theButtons {
+  display: flex; /* Use flexbox for button alignment */
+  gap: 10px; /* Space between buttons */
+  margin-top: 5px;
+  justify-content: center; /* Center buttons horizontally on large screens */
+}
+
+.cta-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px; /* Consistent padding */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem; /* Consistent font size */
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+button.cta-button {
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .store-page-container {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .store-page-content {
+    text-align: left;
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .store-page-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .store-page-content {
+    text-align: center;
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 0.5rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  .cta-button {
+    font-size: 0.5rem;
+  }
 }

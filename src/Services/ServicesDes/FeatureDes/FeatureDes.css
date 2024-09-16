@@ -17,21 +17,9 @@
   border-radius: 10px;
 }
 
-.feature-video-container {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
 .feature-page-content {
   max-width: 600px;
-  text-align: left;
+  /* text-align: left; */
   font-size: 1rem;
   color: #333; /* Darker text for better readability */
   padding: 10px;
@@ -44,9 +32,13 @@ h2 {
 }
 
 p {
-  font-size: 10px; 
+  font-size: 10px;
   margin-bottom: 10px;
+  /* Remove overflow if it's there */
+  overflow: visible; /* Ensure content is visible without scroll */
+  height: auto; /* Allow the height to adjust based on content */
 }
+
 
 .theButtons {
   display: flex; /* Use flexbox for button alignment */
@@ -93,8 +85,6 @@ button.cta-button {
       font-size: 1rem;
     }
   }
-
-  
 }
 
 @media screen and (max-width: 767px) {

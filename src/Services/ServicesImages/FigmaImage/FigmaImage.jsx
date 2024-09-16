@@ -4,31 +4,38 @@ import { storage } from "../../../Components/Firebase";
 import "./FigmaImage.css";
 
 export default function FigmaImage({ setActiveSection }) {
-  const [categories, setCategories] = useState([]);
+  const [media, setMedia] = useState([]); // Combined state for images and videos
   const containerRef = useRef(null);
   const itemRefs = useRef([]);
 
-  // Fetch images from Firebase Storage
+  // Fetch images and videos from Firebase Storage
   useEffect(() => {
     const storageRef = ref(storage, "Figma/"); // Adjust folder name as needed
-    const fetchImages = async () => {
+    const fetchMedia = async () => {
       try {
         const result = await listAll(storageRef);
-        const imagePromises = result.items.map((imageRef) =>
-          getDownloadURL(imageRef)
-        );
-        const imageUrls = await Promise.all(imagePromises);
-        const imageData = imageUrls.map((url, index) => ({
-          name: `Image${index + 1}`,
-          image: url,
-        }));
-        setCategories(imageData);
+        const mediaPromises = result.items.map(async (itemRef) => {
+          const url = await getDownloadURL(itemRef);
+          const name = itemRef.name;
+
+          // Check the file type
+          const isVideo = name.match(/\.(mp4|webm|ogg)$/i);
+
+          return {
+            name,
+            url,
+            type: isVideo ? "video" : "image", // Identify if it's a video or image
+          };
+        });
+
+        const mediaData = await Promise.all(mediaPromises);
+        setMedia(mediaData);
       } catch (error) {
-        console.error("Error fetching images from Firebase:", error);
+        console.error("Error fetching media from Firebase:", error);
       }
     };
 
-    fetchImages();
+    fetchMedia();
   }, []);
 
   // Scroll functions
@@ -46,7 +53,7 @@ export default function FigmaImage({ setActiveSection }) {
     });
   };
 
-  const focusImage = (index) => {
+  const focusMedia = (index) => {
     if (itemRefs.current[index]) {
       itemRefs.current[index].scrollIntoView({
         behavior: "smooth",
@@ -62,19 +69,26 @@ export default function FigmaImage({ setActiveSection }) {
         &lt;
       </button>
       <div className="FigmaImage-container" ref={containerRef}>
-        {categories.length > 0 ? (
-          categories.map((FigmaImage, index) => (
+        {media.length > 0 ? (
+          media.map((item, index) => (
             <div
               key={index}
               className="FigmaImage-item"
               ref={(el) => (itemRefs.current[index] = el)}
-              onClick={() => focusImage(index)}
+              onClick={() => focusMedia(index)}
             >
-              <img src={FigmaImage.image} alt={FigmaImage.name} />
+              {item.type === "image" ? (
+                <img src={item.url} alt={item.name} />
+              ) : (
+                <video controls>
+                  <source src={item.url} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              )}
             </div>
           ))
         ) : (
-          <p>Loading images...</p>
+          <p>Loading media...</p>
         )}
       </div>
       <button className="scroll-button rights" onClick={scrollRight}>

@@ -1,12 +1,142 @@
-/* Figma Component Styles */
-.Figma {
-  background-color: orchid;
-  width: 100%;
-  justify-content: center;
+.FigmaPage-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 
-.FigmaHeading {
+/* Header Styles */
+.feature-page-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+  transform: rotate(90deg); /* Rotate the image to make it look like a back button */
+}
+
+.back-button-image {
+  width: 30px;
+  height: 30px;
+}
+
+.feature-page-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+.FigmaPage-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 80%;
+
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+}
+
+.FigmaPage-item {
+  min-width: 700px;
+  scroll-snap-align: center;
   text-align: center;
-  padding-bottom: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.FigmaPage-item img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+
+.FigmaPage-text {
+  margin-top: 10px;
+}
+
+.scroll-button {
+  color: #222;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.scroll-button.lefts {
+  position: absolute;
+  left: 10px;
+}
+
+.scroll-button.rights {
+  position: absolute;
+  right: 10px;
+}
+
+.book-appointment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-appointment .cta-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.book-appointment .cta-button:hover {
+  background-color: #1c86ee;
+}
+
+/* Media Queries */
+
+/* For tablets */
+@media (max-width: 768px) {
+  .FigmaPage-item {
+    min-width: 300px; /* Adjust width for tablets */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .FigmaPage-item {
+    width: 200px; /* Adjust width for mobile devices */
+  }
+
+  .scroll-button {
+    padding: 5px; /* Smaller button padding for mobile */
+  }
+
+  .calendly-button {
+    padding: 8px 16px; /* Smaller button padding for mobile */
+  }
 }
