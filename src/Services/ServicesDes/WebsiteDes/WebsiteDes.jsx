@@ -15,7 +15,7 @@ export default function WebsiteDes() {
         <div className="website-page-content">
           <h2>Explore My Website Designs</h2>
           <p>
-            Thank you for exploring. <br />Have a look at some of my stunning
+            Have a look at some of my stunning
             website projects. I focus on clean, functional, and creative designs
             to give your brand a unique presence online. Let's work together to
             bring your ideas to life.

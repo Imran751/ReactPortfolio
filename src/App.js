@@ -7,12 +7,7 @@ import Works from "./Components/4Works/Works";
 import Testimonials from "./Components/5Testimonials/Testimonials";
 import Contact from "./Components/6Contact/Contact";
 import Footer from "./Components/7Footer/Footer";
-import FeaturePage from "./ServicesPages/FeaturePage/FeaturePage";
-import FigmaPage from "./ServicesPages/FigmaPage/FigmaPage";
-import WebAppPage from "./ServicesPages/WebAppPage/WebAppPage";
-import WebsitePage from "./ServicesPages/WebsitePage/WebsitePage";
-import StorePage from "./ServicesPages/StorePage/StorePage";
-import AssetPage from "./ServicesPages/AssetPage/AssetPage";
+// import FeaturePage from "./ServicesPages/FeaturePage/FeaturePage";
 import "./App.css";
 
 const App = () => {
@@ -35,12 +30,7 @@ const App = () => {
                 </>
               }
             />
-            <Route path="/features" element={<FeaturePage />} /> {/* Use route paths */}
-            <Route path="/figma" element={<FigmaPage />} />
-            <Route path="/web-app" element={<WebAppPage />} />
-            <Route path="/website" element={<WebsitePage />} />
-            <Route path="/store" element={<StorePage />} />
-            <Route path="/assets" element={<AssetPage />} />
+            {/* <Route path="/features" element={<FeaturePage />} />  */}
           </Routes>
           
         </div>

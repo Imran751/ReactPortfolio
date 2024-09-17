@@ -13,11 +13,10 @@ export default function StoreDes() {
     <div className="StoreDes" id="StoreDes">
       <div className="store-page-container">
         <div className="store-page-content">
-          <h2>Explore Our Store</h2>
+          <h2>Thank you for visiting</h2>
           <p>
-            Discover a wide range of products that cater to your needs and preferences. <br />
-            From unique finds to everyday essentials, our store has something for everyone. Explore our offerings and find what you're looking for.
-          </p>
+            Let's collaborate.
+            </p>
 
           <div className="theButtons">
             {/* Button for Book Appointment */}

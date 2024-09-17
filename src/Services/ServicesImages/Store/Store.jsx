@@ -18,9 +18,9 @@ const ProductCard = ({ name, link, imageUrl }) => (
     <img src={imageUrl} alt={name} className="product-image" />
     <div className="product-info">
       <h3 className="product-name">{name}</h3>
-      <a href={link} className="product-link" target="_blank" rel="noopener noreferrer">
+      {/* <a href={link} className="product-link" target="_blank" rel="noopener noreferrer">
         View Product
-      </a>
+      </a> */}
     </div>
   </div>
 );
@@ -28,13 +28,13 @@ const ProductCard = ({ name, link, imageUrl }) => (
 export default function Store() {
   return (
     <div className="store-gallery">
-      <h1>Digital Product Gallery</h1>
+      <h1>Things I work with...</h1>
       <div className="product-grid">
         {products.map((product, index) => (
           <ProductCard
             key={index}
             name={product.name}
-            link={product.link}
+            // link={product.link}
             imageUrl={product.imageUrl}
           />
         ))}

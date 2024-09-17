@@ -15,7 +15,7 @@ export default function FigmaDes() {
         <div className="figma-page-content">
           <h2>Explore My Figma Designs</h2>
           <p>
-            Thank you for exploring my Figma designs. From wireframes to final
+            From wireframes to final
             designs, I aim to create intuitive and visually appealing user
             interfaces. Let's collaborate and bring your ideas to life through
             design.

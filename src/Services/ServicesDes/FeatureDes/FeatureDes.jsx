@@ -16,7 +16,7 @@ export default function FeatureDes() {
         <div className="feature-page-content">
           <h2>Explore My Work</h2>
           <p>
-            Thank you for visiting. <br />Check out some of my standout projects
+            Check out some of my standout projects
             above. From concept to completion, I bring a creative touch and a
             commitment to excellence. Let's collaborate and make something
             extraordinary together.

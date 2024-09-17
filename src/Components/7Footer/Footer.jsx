@@ -5,35 +5,35 @@ export default function Footer() {
     <div className="Footer" id="Footer">
       <div className="SocialContainer">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/Imran751"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src={require("../../Assets/git.png")} alt="GitHub" />
               </a>
               <a
-                href="https://youtube.com/yourchannel"
+                href="https://www.youtube.com/@muhammadimranjhang"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src={require("../../Assets/youtube.png")} alt="YouTube" />
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://twitter.com/muhammadimranjhang/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src={require("../../Assets/x.png")} alt="Twitter" />
               </a>
               <a
-                href="https://instagram.com/yourusername"
+                href="https://www.instagram.com/muhammadimranjhang/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src={require("../../Assets/insta.png")} alt="Instagram" />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/muhammadimranfullstackdeveloper/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -13,6 +13,10 @@
   margin-bottom: 20px;
 }
 
+.store-gallery h3 {
+  font-size: 12px;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

@@ -13,9 +13,8 @@ export default function AppDec() {
     <div className="AppDec" id="AppDec">
       <div className="app-page-container">
         <div className="app-page-content">
-          <h2>Explore My Apps</h2>
+          <h2>Explore My App Develpment Skills</h2>
           <p>
-            Thank you for checking out my apps. <br />
             Each app is crafted with attention to detail and a focus on user experience.
             Let’s build innovative solutions together.
           </p>

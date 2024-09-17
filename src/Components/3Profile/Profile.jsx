@@ -6,7 +6,7 @@ import FeatureImage from "../../Services/ServicesImages/FeatureImage/FeatureImag
 import AssetDes from "../../Services/ServicesDes/AssetDes/AssetDes";
 import FigmaDes from "../../Services/ServicesDes/FigmaDes/FigmaDes";
 import WebsiteDes from "../../Services/ServicesDes/WebsiteDes/WebsiteDes";
-// import StoreDes from "../../Services/ServicesDes/StoreDes/StoreDes";
+import StoreDes from "../../Services/ServicesDes/StoreDes/StoreDes";
 import AppDec from "../../Services/ServicesDes/AppDec/AppDec";
 import FigmaImage from "../../Services/ServicesImages/FigmaImage/FigmaImage";
 import WebImage from "../../Services/ServicesImages/WebImage/WebImage";
@@ -51,7 +51,7 @@ export default function Profile() {
         return (
           <>
             <StoreImage />
-            {/* <StoreDes /> */}
+            <StoreDes />
           </>
         );
       case "MobileApps":

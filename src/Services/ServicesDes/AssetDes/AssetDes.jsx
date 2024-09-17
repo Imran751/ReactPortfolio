@@ -13,7 +13,7 @@ export default function AssetDes() {
     <div className="AssetDes" id="AssetDes">
       <div className="asset-page-container">
         <div className="asset-page-content">
-          <h2>Explore My Assets</h2>
+          <h2>Explore My Digital Assets</h2>
           <p>
             Discover a collection of assets designed with creativity and
             functionality in mind. From unique graphics to practical resources,
